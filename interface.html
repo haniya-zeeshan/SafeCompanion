@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeCompanion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="whole-page">
+
+    <div class="top-bar">
+      <div class="app-name">SafeCompanion</div>
+      <div class="app-tagline">Your helpful AI friend</div>
+    </div>
+
+    <div class="sos-section">
+      <button class="sos-button" id="sosButton" onclick="showSOSChoices()">
+        SOS — I Need Help Right Now
+      </button>
+
+      <div class="sos-choices" id="sosChoices">
+        <p class="choices-text">How do you want to reach your contact?</p>
+        <div class="two-buttons">
+          <button class="choice-call" onclick="doCall()">📞 Call Them</button>
+          <button class="choice-msg" onclick="doMessage()">💬 Send Message</button>
+        </div>
+        <button class="cancel-btn" onclick="hideSOSChoices()">Cancel</button>
+      </div>
+    </div>
+
+    <div class="white-card">
+      <div class="card-title">Save Emergency Contact</div>
+      <p class="card-desc">This number will be called or messaged when you press SOS</p>
+      <div class="contact-row">
+        <input
+          type="tel"
+          id="contactNumber"
+          placeholder="Enter phone number e.g. +1 234 567 8900"
+          class="big-input"
+        />
+        <button class="save-btn" onclick="saveNumber()">Save</button>
+      </div>
+      <div class="saved-msg" id="savedMsg">Number saved successfully!</div>
+    </div>
+
+    <div class="white-card">
+      <div class="card-title">Talk to Your AI Helper</div>
+      <p class="card-desc">Ask anything — type or use the microphone to speak</p>
+
+      <div class="chat-area" id="chatArea">
+        <div class="ai-bubble">
+          Hello! I am here to help you with anything. You can ask me how to use your phone, check if a message is a scam, or anything else. Just type or press the mic button to speak!
+        </div>
+      </div>
+
+      <div class="type-row">
+        <input
+          type="text"
+          id="userText"
+          placeholder="Type your question here..."
+          class="big-input"
+          onkeydown="if(event.key === 'Enter') sendChat()"
+        />
+        <button class="mic-btn" id="micBtn" onclick="startMic()" title="Speak to me">🎤</button>
+        <button class="send-btn" onclick="sendChat()">Send</button>
+      </div>
+    </div>
+
+    <div class="white-card">
+      <div class="card-title">Quick Help Buttons</div>
+      <p class="card-desc">Tap any button below to ask a common question</p>
+      <div class="quick-grid">
+        <button class="quick-btn" onclick="askQuick('How do I make a video call on my phone?')">How to video call?</button>
+        <button class="quick-btn" onclick="askQuick('Is this message a scam? What should I look for?')">Is this a scam?</button>
+        <button class="quick-btn" onclick="askQuick('How do I take a photo on my phone?')">How to take a photo?</button>
+        <button class="quick-btn" onclick="askQuick('How do I send a WhatsApp message?')">How to use WhatsApp?</button>
+        <button class="quick-btn" onclick="askQuick('How do I make the text bigger on my phone?')">Make text bigger?</button>
+        <button class="quick-btn" onclick="askQuick('How do I connect to WiFi?')">Connect to WiFi?</button>
+      </div>
+    </div>
+
+    <div class="white-card">
+      <div class="card-title">Scam Checker</div>
+      <p class="card-desc">Got a suspicious message? Paste it here and we will check it for you</p>
+      <textarea
+        id="scamText"
+        class="scam-box"
+        placeholder="Paste the suspicious message here..."
+        rows="4"
+      ></textarea>
+      <button class="check-btn" onclick="checkScam()">Check This Message</button>
+      <div class="scam-result" id="scamResult"></div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
