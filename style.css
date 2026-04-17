@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #e8f4fd;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+.whole-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.top-bar {
+  text-align: center;
+  padding: 24px 0 20px;
+}
+
+.app-name {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1565c0;
+}
+
+.app-tagline {
+  font-size: 18px;
+  color: #5c7a9e;
+  margin-top: 4px;
+}
+
+.sos-section {
+  margin-bottom: 20px;
+}
+
+.sos-button {
+  width: 100%;
+  background-color: #c62828;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  padding: 22px 20px;
+  font-size: 22px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.2s;
+}
+
+.sos-button:hover {
+  background-color: #b71c1c;
+}
+
+.sos-button:active {
+  transform: scale(0.98);
+}
+
+.sos-choices {
+  display: none;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 12px;
+  border: 2px solid #bbdefb;
+}
+
+.sos-choices.visible {
+  display: block;
+}
+
+.choices-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.two-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.choice-call {
+  flex: 1;
+  background: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.choice-call:hover {
+  background: #0d47a1;
+}
+
+.choice-msg {
+  flex: 1;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.choice-msg:hover {
+  background: #1b5e20;
+}
+
+.cancel-btn {
+  width: 100%;
+  background: #f5f5f5;
+  color: #555;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #eeeeee;
+}
+
+.white-card {
+  background: white;
+  border-radius: 20px;
+  padding: 22px 20px;
+  margin-bottom: 20px;
+  border: 1.5px solid #bbdefb;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1565c0;
+  margin-bottom: 6px;
+}
+
+.card-desc {
+  font-size: 15px;
+  color: #5c7a9e;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.contact-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.big-input {
+  width: 100%;
+  font-size: 17px;
+  font-family: 'Nunito', sans-serif;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #bbdefb;
+  background: #f0f8ff;
+  color: #1a1a2e;
+  outline: none;
+}
+
+.big-input:focus {
+  border-color: #1565c0;
+  background: white;
+}
+
+.save-btn {
+  background: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 22px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.save-btn:hover {
+  background: #0d47a1;
+}
+
+.saved-msg {
+  display: none;
+  color: #2e7d32;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.chat-area {
+  background: #f0f8ff;
+  border-radius: 14px;
+  padding: 14px;
+  min-height: 180px;
+  max-height: 260px;
+  overflow-y: auto;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ai-bubble {
+  background: white;
+  border: 1.5px solid #bbdefb;
+  border-radius: 14px;
+  padding: 13px 16px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #1a1a2e;
+  align-self: flex-start;
+  max-width: 90%;
+}
+
+.user-bubble {
+  background: #1565c0;
+  color: white;
+  border-radius: 14px;
+  padding: 13px 16px;
+  font-size: 17px;
+  line-height: 1.6;
+  align-self: flex-end;
+  max-width: 90%;
+}
+
+.thinking-bubble {
+  background: #e3f2fd;
+  border: 1.5px solid #bbdefb;
+  border-radius: 14px;
+  padding: 13px 16px;
+  font-size: 16px;
+  color: #5c7a9e;
+  align-self: flex-start;
+}
+
+.type-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.type-row .big-input {
+  flex: 1;
+}
+
+.mic-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: 1.5px solid #bbdefb;
+  background: #e3f2fd;
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mic-btn.is-listening {
+  background: #ffcdd2;
+  border-color: #e57373;
+}
+
+.send-btn {
+  background: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 20px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.send-btn:hover {
+  background: #0d47a1;
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.quick-btn {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1.5px solid #bbdefb;
+  border-radius: 14px;
+  padding: 14px 12px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.quick-btn:hover {
+  background: #bbdefb;
+}
+
+.scam-box {
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #bbdefb;
+  background: #f0f8ff;
+  color: #1a1a2e;
+  outline: none;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+.scam-box:focus {
+  border-color: #1565c0;
+  background: white;
+}
+
+.check-btn {
+  width: 100%;
+  background: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.check-btn:hover {
+  background: #0d47a1;
+}
+
+.scam-result {
+  display: none;
+  margin-top: 14px;
+  background: #f0f8ff;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a2e;
+  border: 1.5px solid #bbdefb;
+}
